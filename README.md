@@ -22,12 +22,11 @@ The core system involves:
 Python is the recommended language for implementation, with libraries
 like pygame or Tkinter for optional graphical interfaces.
 
-For the project deliverable, you are expected to submit (1) a write-up document
-motivating the problem, describing the Minimax algorithm and Alpha-Beta pruning,
-providing insights into decision-making and optimization strategies, evaluation
-methodologies, and reporting results; (2) a 10-minute presentation (slides); (3)
-implementation (with proper code comments) on GitHub; and (4) a demo notebook
-showing how to run your AI system and reproduce the reported results.
+# Project Deliverable 
+1. Sumbit a write-up document: motivating the problem, describing the Minimax algorithm and Alpha-Beta pruning, providing insights into decision-making and optimization strategies, evaluation methodologies, and reporting results
+2. a 10-minute presentation (slides)
+3. implementation (with proper code comments) on GitHub
+4. a demo notebook showing how to run your AI system and reproduce the reported results.
 
 # References:
 1. MiniMax Algorithm: hpps://en.wikipedia.org/wiki/Minimax
