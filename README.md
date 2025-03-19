@@ -23,7 +23,12 @@ Python is the recommended language for implementation, with libraries
 like pygame or Tkinter for optional graphical interfaces.
 
 # Project Deliverable 
-1. Sumbit a write-up document: motivating the problem, describing the Minimax algorithm and Alpha-Beta pruning, providing insights into decision-making and optimization strategies, evaluation methodologies, and reporting results
+1. Sumbit a write-up document: 
+    - motivating the problem, 
+    - describing the Minimax algorithm and Alpha-Beta pruning, 
+    - providing insights into decision-making and optimization strategies, 
+    - evaluation methodologies, 
+    - and reporting results
 2. A 10-minute presentation (slides)
 3. Implementation (with proper code comments) on GitHub
 4. A demo notebook showing how to run your AI system and reproduce the reported results.
