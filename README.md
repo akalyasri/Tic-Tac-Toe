@@ -34,6 +34,6 @@ like pygame or Tkinter for optional graphical interfaces.
 4. A demo notebook showing how to run your AI system and reproduce the reported results.
 
 # References:
-1. MiniMax Algorithm: hpps://en.wikipedia.org/wiki/Minimax
-2. Alpha-Beta Pruning: hpps://en.wikipedia.org/wiki/Alpha–beta_pruning
-3. Pygame Documentaqon: hpps://www.pygame.org/docs/
+1. MiniMax Algorithm: [hpps://en.wikipedia.org/wiki/Minimax](https://en.wikipedia.org/wiki/Minimax)
+2. Alpha-Beta Pruning: [hpps://en.wikipedia.org/wiki/Alpha–beta_pruning](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning)
+3. Pygame Documentaqon: [hpps://www.pygame.org/docs/](https://www.pygame.org/docs/)
