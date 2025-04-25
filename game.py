@@ -1,7 +1,7 @@
 import pygame
 import sys
 import time
-import gameMaster as ttt
+import ttt
 
 pygame.init()
 
@@ -37,3 +37,37 @@ def get_board_size():
 # creating board based on user input
 board_size = get_board_size()  # board size from the user
 board = ttt.initial_state(board_size)  # pass the size to your gameMaster's initial state
+
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            sys.exit()
+
+    screen.fill(black)
+
+    # user chooses player
+    if user is None:
+
+        # create title
+        title = largeFont.render("Play Tic-Tac-Toe", True, white)
+        titleRect = title.get_rect()
+        titleRect.center = ((width / 2), 50)
+        screen.blit(title, titleRect)
+        
+        # create button
+        playXButton = pygame.Rect((width / 8), (height / 2), width / 4, 50)
+        playX = mediumFont.render("Play as X", True, black)
+        playXRect = playX.get_rect()
+        playXRect.center = playXButton.center
+        pygame.draw.rect(screen, white, playXButton)
+        screen.blit(playX, playXRect)
+
+        playOButton = pygame.Rect(5 * (width / 8), (height / 2), width / 4, 50)
+        playO = mediumFont.render("Play as O", True, black)
+        playORect = playO.get_rect()
+        playORect.center = playOButton.center
+        pygame.draw.rect(screen, white, playOButton)
+        screen.blit(playO, playORect)
+
+
