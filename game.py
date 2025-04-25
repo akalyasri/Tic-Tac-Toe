@@ -46,28 +46,50 @@ while True:
 
     screen.fill(black)
 
+    # adding a background
+    for y in range(height):
+        color = (y * 255 // height, y * 255 // height, y * 255 // height)
+        pygame.draw.line(screen, color, (0, y), (width, y))
+
+
     # user chooses player
     if user is None:
 
         # create title
-        title = largeFont.render("Play Tic-Tac-Toe", True, white)
+        title_text = "Play Tic-Tac-Toe"
+        title = largeFont.render(title_text, True, white)
         titleRect = title.get_rect()
         titleRect.center = ((width / 2), 50)
+        
+        # adding a shadow effect
+        shadow = largeFont.render(title_text, True, (50, 50, 50))
+        shadow_rect = shadow.get_rect(center=titleRect.center)
+        shadow_rect.move_ip(2, 2)
+        screen.blit(shadow, shadow_rect)
         screen.blit(title, titleRect)
+
         
         # create button
         playXButton = pygame.Rect((width / 8), (height / 2), width / 4, 50)
         playX = mediumFont.render("Play as X", True, black)
         playXRect = playX.get_rect()
         playXRect.center = playXButton.center
-        pygame.draw.rect(screen, white, playXButton)
+        
+        mouse = pygame.mouse.get_pos()
+        hoverX = playXButton.collidepoint(mouse)
+        pygame.draw.rect(screen, (200, 200, 200) if hoverX else white, playXButton, border_radius=10)
+
+
         screen.blit(playX, playXRect)
 
+        # making front end a bit fancier
         playOButton = pygame.Rect(5 * (width / 8), (height / 2), width / 4, 50)
         playO = mediumFont.render("Play as O", True, black)
         playORect = playO.get_rect()
         playORect.center = playOButton.center
-        pygame.draw.rect(screen, white, playOButton)
+
+        hoverO = playOButton.collidepoint(mouse)
+        pygame.draw.rect(screen, (200, 200, 200) if hoverO else white, playOButton, border_radius=10)
         screen.blit(playO, playORect)
 
         # check if button is clicked
@@ -116,17 +138,24 @@ while True:
         if game_over:
             winner = ttt.check_winner(board, board_size)
             if winner is None:
-                title = f"Game Over: Tie."
+                title_text = f"Game Over: Tie."
             else:
-                title = f"Game Over: {winner} wins."
+                title_text = f"Game Over: {winner} wins."
         elif user == player:
-            title = f"Play as {user}"
+            title_text = f"Play as {user}"
         else:
-            title = f"Thinking..."
-        title = largeFont.render(title, True, white)
+            title_text = f"Thinking..."
+        title = largeFont.render(title_text, True, white)
         titleRect = title.get_rect()
         titleRect.center = ((width / 2), 30)
+        
+        # adding a soft glow
+        shadow = largeFont.render(title_text, True, (50, 50, 50))
+        shadow_rect = shadow.get_rect(center=titleRect.center)
+        shadow_rect.move_ip(2, 2)
+        screen.blit(shadow, shadow_rect)
         screen.blit(title, titleRect)
+
 
         # check for AI move
         if user != player and not game_over:
