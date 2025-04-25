@@ -5,6 +5,9 @@ import ttt
 
 pygame.init()
 
+# button hover sound
+# hover_sound = pygame.mixer.Sound("button-hover.ogg") // commented out bc pygame made the audio glitchy
+
 # window size - might change later
 size = width, height = 900, 700  
 
