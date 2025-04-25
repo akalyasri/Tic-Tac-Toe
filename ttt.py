@@ -128,3 +128,22 @@ def max_alpha_beta(board, alpha, beta, k, depth, depth_limit):
 
     return best_score, best_action
 
+def min_alpha_beta(board, alpha, beta, k, depth, depth_limit):
+    """
+    Minimizing function for Alpha-Beta Pruning.
+    """
+    if terminal(board, k) or depth >= depth_limit:
+        return utility(board, k), None
+
+    best_score = float('inf')
+    best_action = None
+
+    for action in actions(board):
+        score, _ = max_alpha_beta(result(board, action), alpha, beta, k, depth + 1, depth_limit)
+        if score < best_score:
+            best_score, best_action = score, action
+        beta = min(beta, best_score)
+        if beta <= alpha:
+            break  # Prune
+
+    return best_score, best_action
