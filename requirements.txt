@@ -1,0 +1,3 @@
+# Requirements for Tic-Tac-Toe AI Project
+pygame
+matplotlib
